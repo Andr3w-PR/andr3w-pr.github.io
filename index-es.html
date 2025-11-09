@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Título de la página, visible en la pestaña del navegador -->
+    <title>Portafolio de Edward A. Guzmán González</title>
+	<meta charset="utf-8">
+    <!-- Enlace a los íconos de FontAwesome para usar en la página -->
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+</head>
+    
+<body style="margin:0">
+    <audio id="track1" autoplay muted>
+            <source src="multimedia/audio/normal.mp3" type="audio/mpeg">
+            Tu navegador no es compatible con musica de este formato.
+    </audio>
+    <audio id="track2" autoplay muted>
+            <source src="multimedia/audio/fiddlesticks-rag.mp3" type="audio/mpeg">
+            Tu navegador no es compatible con musica de este formato.
+    </audio>
+    <audio id="track3" autoplay muted>
+            <source src="multimedia/audio/sleeping-again.mp3" type="audio/mpeg">
+            Tu navegador no es compatible con musica de este formato.
+    </audio>
+    <audio id="track4" autoplay muted>
+            <source src="multimedia/audio/major-circuit_punch-out_wii.mp3" type="audio/mpeg">
+            Tu navegador no es compatible con musica de este formato.
+    </audio>
+
+    <script>
+ // Get the audio elements
+        const track1 = document.getElementById('track1');
+        const track2 = document.getElementById('track2');
+        const track3 = document.getElementById('track3');
+        const track4 = document.getElementById('track4');
+        // Function to play the next track and ensure only one track is playing at a time
+        function playNextTrack(currentTrack, nextTrack) {
+            currentTrack.addEventListener('ended', function() {
+                currentTrack.pause(); // Pause the current track
+                currentTrack.currentTime = 0; // Reset the current track to the beginning
+                currentTrack.muted = true; // Mute the current track
+
+                nextTrack.currentTime = 0; // Reset the next track to the beginning
+                nextTrack.muted = false; // Unmute the next track
+                nextTrack.play(); // Start the next track
+            });
+        }
+
+        // Link the tracks in a loop
+        playNextTrack(track1, track2); // track1 ends, track2 starts
+        playNextTrack(track2, track3); // track2 ends, track3 starts
+        playNextTrack(track3, track4); // track3 ends, track4 starts
+        playNextTrack(track4, track1); // track3 ends, track1 starts again (loop)
+
+        // Start playing track1 when the page loads
+        window.addEventListener('load', function() {
+            track1.muted = false; // Unmute the first track
+            track1.play();
+        });
+
+        // Ensure no other track is playing when a track starts
+        track1.addEventListener('play', function() {
+            track2.pause();
+            track2.currentTime = 0;
+            track2.muted = true;
+
+            track3.pause();
+            track3.currentTime = 0;
+            track3.muted = true;
+            
+            track4.pause();
+            track4.currentTime = 0;
+            track4.muted = true;
+        });
+
+        track2.addEventListener('play', function() {
+            track1.pause();
+            track1.currentTime = 0;
+            track1.muted = true;
+
+            track3.pause();
+            track3.currentTime = 0;
+            track3.muted = true;
+            
+            track4.pause();
+            track4.currentTime = 0;
+            track4.muted = true;
+        });
+
+        track3.addEventListener('play', function() {
+            track1.pause();
+            track1.currentTime = 0;
+            track1.muted = true;
+
+            track2.pause();
+            track2.currentTime = 0;
+            track2.muted = true;
+            
+            track4.pause();
+            track4.currentTime = 0;
+            track4.muted = true;
+        });
+        
+        track4.addEventListener('play', function() {
+            track1.pause();
+            track1.currentTime = 0;
+            track1.muted = true;
+
+            track2.pause();
+            track2.currentTime = 0;
+            track2.muted = true;
+            
+            track3.pause();
+            track3.currentTime = 0;
+            track3.muted = true;
+        });
+    </script>
+    <!-- Inicio del encabezado de la página -->
+    <!-- Utiliza una tabla para organizar el layout del encabezado -->
+    <table border="0" width="100%" cellpadding="0" cellspacing="0" bgcolor="#2C5F2D">
+        <tr>
+            <td>
+                <!-- Tabla interna para alinear los elementos del encabezado -->
+                <table border="0" width="85%" cellpadding="15" cellspacing="0" align="center">
+                    <tr>
+                        <!-- Nombre o logotipo del sitio web -->
+                        <td><strong style="font-family: times, serif; font-size: 16px; color: #F5F5F5; text-decoration: none;">Guzmán González, Edward A.</strong></td>
+                        <!-- Espaciador -->
+                        <td width="30%">&nbsp;</td>
+                        <!-- Enlaces de navegación -->
+                        <!-- #home dirige al usuario a la sección Inicio de la página -->
+                        <td><a href="#home" style="font-family: Arial, sans-serif; color: #F5F5F5; font-size: 16px; text-decoration: none; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3)">Introduccion</a></td>
+                        <!-- #about dirige al usuario a la sección Acerca de Mí -->
+                        <td><a href="#about" style="font-family: Arial, sans-serif; color: #F5F5F5; font-size: 16px; text-decoration: none; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3)">Acerca de Mi</a></td>
+                        <!-- #habilidades dirige al usuario a la sección Habilidades -->
+                        <td><a href="#habilidades" style="font-family: Arial, sans-serif; color: #F5F5F5; font-size: 16px; text-decoration: none; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3)">Habilidades</a></td>
+                        <!-- #portfolio dirige al usuario a la sección Trabajos o Proyectos -->
+                        <td><a href="#portfolio" style="font-family: Arial, sans-serif; color: #F5F5F5; font-size: 16px; text-decoration: none; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3)">Trabajos y Proyectos</a></td>
+                        <!-- #contact dirige al usuario a la sección Contacto -->
+                        <td><a href="#contact" style="font-family: Arial, sans-serif; color: #F5F5F5; font-size: 16px; text-decoration: none; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3)">Contáctame</a></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <!-- Fin del encabezado -->
+
+    <!-- Inicio de la sección Home -->
+    <!-- Se utiliza otra tabla para organizar el layout de la sección -->
+    <table border="0" id="home" width="100%" cellpadding="0" cellspacing="0" bgcolor="#EAE2D6">
+      <tr>
+         <td>
+            <table border="0" width="85%" cellpadding="15" cellspacing="0" align="center">
+               <tr>
+                  <!-- Contenido central de la sección Home, incluyendo saludos y título profesional -->
+                  <td align="center" valign="middle" height="300">
+                     <h3>
+                        <!-- Marquee para animación de texto "Hola, Soy Isaac" -->
+                        <font face="times" color="D17842" size="12">
+                        Bienvenidos, yo soy Edward Andrew Guzmán González,
+                        </font>
+                     </h3>
+                     <h1>
+                        <!-- Marquee para animación de texto "Profesor" -->
+                        <font face="arial" color="4A4A4A" size="6">
+                        y has llegado a mi portafolio personal.
+                         </font>
+                     </h1>
+                  </td>
+               </tr>
+            </table>
+          </td>
+        </tr>
+     </table>
+    <!-- Fin de la sección Home -->
+
+        <!-- Inicio de la sección Acerca de Mí -->
+    <!-- Se utiliza una tabla para estructurar el contenido de la sección -->
+    <table border="0" id="about" width="100%" cellpadding="0" cellspacing="0" bgcolor="#D17842">
+      <tr>
+         <td>
+            <!-- Tabla interna para alinear el contenido dentro de la sección -->
+            <table border="0" width="85%" cellpadding="15" cellspacing="0" align="center">
+                <!-- Título de la sección con decoración subrayada -->
+                <tr>
+                    <td height="160" align="center" valign="middle" colspan="2">
+                        <font face="arial" size="6" color=" #EAE2D6">
+                        Acerca de Mí
+                        </font>
+                        <hr width="200" color="#EAE2D6">
+                    </td>
+                </tr>
+                <!-- Contenido de la sección, incluyendo una imagen y texto -->
+                <tr>
+                    <!-- Imagen personal o representativa -->
+                    <td width="35%">
+                        <img src="images/mi-foto.jpg" width="100%" alt="Foto mia." style="border: 8px solid #8b4513; padding: 3px; background-color:#f9bf3d; box-shadow: 0px 4px 8px rgba(0, 0, 0);"/>
+                    </td>
+                    <!-- Descripción personal y profesional -->
+                    <td width="65%" valign="top">
+                        <table border="0" width="100%" cellpadding="0" cellspacing="0" align="center">
+                            <!-- Introducción -->
+                            <tr>
+                                <td height="40">
+                                    <font face="calibri" size="5" color=" #e8e8e8">
+                                    Bueno, otra vez, hola, yo soy Edward Andrew Guzmán González, 
+                                    </font>
+                                </td>
+                            </tr>
+                            <!-- Descripción detallada -->
+                            <tr>
+                                <td>
+                                    <font face="calibri" size="6" color=" #f2f2f2">
+                                    y soy un programador de videojuegos localizado en Puerto Rico.
+                                    </font>
+                                </td>
+                            </tr>
+                            <!-- Texto adicional -->
+                            <tr>
+                                <td>
+                                    <p>
+                                        <font face="arial" size="3" color="#4A4A4A">
+                                        Actualmente soy un novato, para dar mas detalles, pero me encanta hacer lo que disfruto, algo que yo considero importante.<br><br>
+                                        Ademas, me gusta la politica y la historia.
+                                        </font>
+                                    </p>
+                                </td>
+                            </tr>
+                            <!-- Botones de acción para descargar CV y contacto -->
+                            <tr>
+                                <td>
+                                    <a href="subsites/cv/cv.html">
+                                        <font face="arial" size="5" color="#0088F1">	
+                                        Mi CV
+                                        </font>
+                                    </a>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <a href="#contact">
+                                        <font face="arial" size="5" color="#0088F1">Contáctame</font>
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>  
+                    </td>
+                </tr>
+            </table>
+          </td>
+        </tr>
+     </table>
+    <!-- Fin de la sección Acerca de Mí -->
+	    <!-- Inicio de la sección Habilidades -->
+    <!-- Esta sección muestra las habilidades técnicas y personales del usuario. Se utiliza una combinación de texto y barras de progreso visual para representar el nivel de competencia en diversas habilidades. -->
+    <table border="0" id="habilidades" width="100%" cellpadding="0" cellspacing="0" bgcolor="#d0c095">
+      <tr>
+         <td>
+            <table border="0" width="85%" cellpadding="15" cellspacing="0" align="center">
+                <!-- Encabezado de la sección Habilidades -->
+                <tr>
+                    <td height="160" align="center" valign="middle" colspan="2">
+                        <font face="arial" size="6" color="#4A4A4A">
+                        Habilidades
+                        </font>
+                        <!-- Línea decorativa para subrayar el título de la sección -->
+                        <hr width="200" color="#4A4A4A">
+                    </td>
+                </tr>
+                <!-- Detalles de cada habilidad presentada en la sección -->
+                <!-- Ejemplo de habilidad: HTML5 -->
+                <tr>
+                    <td width="50%" height="100" valign="top">
+                        <table border="0" width="100%" cellpadding="0" cellspacing="0" align="center">
+                            <!-- Nombre de la habilidad -->
+                            <tr>
+                                <td align="left" valign="top" height="40">
+                                    <font face="arial" size="5" color=" #ffffff">
+                                    Unreal Engine (Blueprints)
+                                    </font>
+                                </td>
+                                <!-- Porcentaje de dominio de la habilidad -->
+                                <td align="right" valign="top" height="40">
+                                    <font face="arial" size="5" color=" #D17842">
+                                    20%
+                                    </font>
+                                </td>
+                            </tr>
+                            <!-- Barra de progreso visual para la habilidad -->
+                            <tr>
+                                <td colspan="2" bgcolor="#e8e8e8" align="left" style="box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6)">
+                                    <table border="0" width="20%" cellpadding="0" cellspacing="0" bgcolor="#39b13b">
+                                        <tr>
+                                            <td height="10"></td>
+                                        </tr>
+                                    </table>  
+                                </td>
+                            </tr>
+                        </table>  
+                    </td>
+                    <!-- Repetir estructura para otras habilidades como CSS3, JavaScript, PHP, etc. -->
+                </tr>
+ <tr>
+                    <td width="50%" height="100" valign="top">
+                        <table border="0" width="100%" cellpadding="0" cellspacing="0" align="center">
+                            <!-- Nombre de la habilidad -->
+                            <tr>
+                                <td align="left" valign="top" height="40">
+                                    <font face="arial" size="5" color=" #ffffff">
+                                    Unreal Engine (Level Design)
+                                    </font>
+                                </td>
+                                <!-- Porcentaje de dominio de la habilidad -->
+                                <td align="right" valign="top" height="40">
+                                    <font face="arial" size="5" color=" #D17842">
+                                    65%
+                                    </font>
+                                </td>
+                            </tr>
+                            <!-- Barra de progreso visual para la habilidad -->
+                            <tr>
+                                <td colspan="2" bgcolor="#e8e8e8" align="left" style="box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6)">
+                                    <table border="0" width="65%" cellpadding="0" cellspacing="0" bgcolor="#39b13b">
+                                        <tr>
+                                            <td height="10"></td>
+                                        </tr>
+                                    </table>  
+                                </td>
+                            </tr>
+                        </table>  
+                    </td>
+                    <!-- Repetir estructura para otras habilidades como CSS3, JavaScript, PHP, etc. -->
+                </tr>
+                 <tr>
+                    <td width="50%" height="100" valign="top">
+                        <table border="0" width="100%" cellpadding="0" cellspacing="0" align="center">
+                            <!-- Nombre de la habilidad -->
+                            <tr>
+                                <td align="left" valign="top" height="40">
+                                    <font face="arial" size="5" color=" #ffffff">
+                                    C++
+                                    </font>
+                                </td>
+                                <!-- Porcentaje de dominio de la habilidad -->
+                                <td align="right" valign="top" height="40">
+                                    <font face="arial" size="5" color=" #D17842">
+                                    60%
+                                    </font>
+                                </td>
+                            </tr>
+                            <!-- Barra de progreso visual para la habilidad -->
+                            <tr>
+                                <td colspan="2" bgcolor="#e8e8e8" align="left" style="box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6)">
+                                    <table border="0" width="60%" cellpadding="0" cellspacing="0" bgcolor="#39b13b">
+                                        <tr>
+                                            <td height="10"></td>
+                                        </tr>
+                                    </table>  
+                                </td>
+                            </tr>
+                        </table>  
+                    </td>
+                    <!-- Repetir estructura para otras habilidades como CSS3, JavaScript, PHP, etc. -->
+                </tr>
+                 <tr>
+                    <td width="50%" height="100" valign="top" >
+                        <table border="0" width="100%" cellpadding="0" cellspacing="0" align="center">
+                            <!-- Nombre de la habilidad -->
+                            <tr>
+                                <td align="left" valign="top" height="40">
+                                    <font face="arial" size="5" color=" #ffffff">
+                                    HTML5 y CSS
+                                    </font>
+                                </td>
+                                <!-- Porcentaje de dominio de la habilidad -->
+                                <td align="right" valign="top" height="40">
+                                    <font face="arial" size="5" color=" #D17842">
+                                    70%
+                                    </font>
+                                </td>
+                            </tr>
+                            <!-- Barra de progreso visual para la habilidad -->
+                            <tr>
+                                <td colspan="2" bgcolor="#e8e8e8" align="left" style="box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6)">
+                                    <table border="0" width="70%" cellpadding="0" cellspacing="0" bgcolor="#39b13b">
+                                        <tr>
+                                            <td height="10"></td>
+                                        </tr>
+                                    </table>  
+                                </td>
+                            </tr>
+                        </table>  
+                    </td>
+                    <!-- Repetir estructura para otras habilidades como CSS3, JavaScript, PHP, etc. -->
+                </tr>
+                 <tr>
+                    <td width="50%" height="100" valign="top">
+                        <table border="0" width="100%" cellpadding="0" cellspacing="0" align="center">
+                            <!-- Nombre de la habilidad -->
+                            <tr>
+                                <td align="left" valign="top" height="40">
+                                    <font face="arial" size="5" color=" #ffffff">
+                                    Historia y Politica
+                                    </font>
+                                </td>
+                                <!-- Porcentaje de dominio de la habilidad -->
+                                <td align="right" valign="top" height="40">
+                                    <font face="arial" size="5" color=" #D17842">
+                                    70%
+                                    </font>
+                                </td>
+                            </tr>
+                            <!-- Barra de progreso visual para la habilidad -->
+                            <tr>
+                                <td colspan="2" bgcolor="#e8e8e8" align="left" style="box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6)">
+                                    <table border="0" width="70%" cellpadding="0" cellspacing="0" bgcolor="#39b13b">
+                                        <tr>
+                                            <td height="10"></td>
+                                        </tr>
+                                    </table>  
+                                </td>
+                            </tr>
+                        </table>  
+                    </td>
+                    <!-- Repetir estructura para otras habilidades como CSS3, JavaScript, PHP, etc. -->
+                </tr>
+                <!-- Asegúrate de adaptar el porcentaje de dominio y el ancho de la barra de progreso según cada habilidad -->
+            </table>
+          </td>
+        </tr>
+     </table>
+    <!-- Fin de la sección Habilidades -->
+    <!-- Inicio de la sección Portfolio -->
+    <!-- Esta sección destaca trabajos o proyectos realizados, mostrando imágenes representativas, títulos y descripciones breves de cada proyecto. Es ideal para mostrar la experiencia y habilidades en contextos prácticos. -->
+    <table border="0" id="portfolio" width="100%" cellpadding="0" cellspacing="0" bgcolor="#f9f9f9">
+      <tr>
+         <td>
+            <table border="0" width="85%" cellpadding="15" cellspacing="0" align="center">
+                <!-- Encabezado de la sección Portfolio -->
+                <tr>
+                    <td height="160" align="center" valign="middle" colspan="3">
+                        <font face="arial" size="6" color=" #104974">
+                        Trabajos y Proyectos Personales
+                        </font>
+                        <hr width="300" color="#104974"> <!-- Línea decorativa -->
+                    </td>
+                </tr>
+                <!-- Primera fila de proyectos -->
+                <tr>
+                    <!-- Proyecto 1 -->
+                    <td width="33.33%" valign="top">
+                        <table border="0" width="100%" cellpadding="15" cellspacing="0" align="center" bgcolor="#f5f5dc" style="box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6)">
+                            <tr>
+                                <td>
+                                    <font face="arial" size="5" color="#444444">
+                                    Escape From the Mutants' Island
+                                    </font>
+                                    <br/><br/>
+                                    <font face="arial" size="4" color="#0088F1">
+                                    Demo de un proyecto de videojuego hecho en Unreal Engine 5 donde tienes que matar animales mutantes y bien agresivos que se escaparon de un laborario en una isla remota.
+                                    </font>
+                                    <br/><br/>
+                                    <video controls src="multimedia/video/mutants-showcase.mp4" width="50%" alt="Demostracion del juego." style="box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6)"></video>
+                                </td>
+                            </tr>
+                        </table>  
+                    </td>
+                    <!-- Proyecto 2 -->
+                    <!-- Repite la estructura para cada proyecto, ajustando los títulos, descripciones e imágenes según corresponda -->
+                </tr>
+                <tr>
+                    <!-- Proyecto 1 -->
+                    <td width="33.33%" valign="top">
+                        <table border="0" width="100%" cellpadding="15" cellspacing="0" align="center" bgcolor="#f5f5dc" style="box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6)">
+                            <tr>
+                                <td>
+                                    <font face="arial" size="5" color="#444444">
+                                    Pray to RNG Jesus
+                                    </font>
+                                    <br/><br/>
+                                    <font face="arial" size="4" color="#0088F1">
+                                    Demo de un trabajo de videojuego hecho en C++ sin interfaz, osea, todo a texto, donde tienes que vencer batallas como un juego RPG o Dungeons & Dragons. Pura suerta practicamente.                                  
+                                    </font>
+                                    <br/><br/>
+                                    <video controls src="multimedia/video/rng-jesus-showcase.mp4" width="50%" alt="Demostracion del juego." style="box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6)"></video>
+                                </td>
+                            </tr>
+                        </table>  
+                    </td>
+                    <!-- Proyecto 2 -->
+                    <!-- Repite la estructura para cada proyecto, ajustando los títulos, descripciones e imágenes según corresponda -->
+                </tr>
+                <tr>
+                    <!-- Proyecto 1 -->
+                    <td width="33.33%" valign="top">
+                        <table border="0" width="100%" cellpadding="15" cellspacing="0" align="center" bgcolor="#f5f5dc" style="box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6)">
+                            <tr>
+                                <td>
+                                    <font face="arial" size="5" color="#444444">
+                                    Seccion de Isla Volcanica
+                                    </font>
+                                    <br/><br/>
+                                    <font face="arial" size="4" color="#0088F1">
+                                    Practica de creacion de niveles en Unreal Engine 5. Es una isla costera con un volcan inactivo convertido en una cascada.                               
+                                    </font>
+                                    <br/><br/>
+                                    <img src="images/volcano-island.png" width="50%" alt="Demostracion del mapa." style="border: 8px solid #ffffff; background-color:#f9bf3d; box-shadow: 0px 4px 8px rgba(0, 0, 0.6);">
+                                </td>
+                            </tr>
+                        </table>  
+                    </td>
+                    <!-- Proyecto 2 -->
+                    <!-- Repite la estructura para cada proyecto, ajustando los títulos, descripciones e imágenes según corresponda -->
+                </tr>
+                <tr>
+                    <!-- Proyecto 1 -->
+                    <td width="33.33%" valign="top">
+                        <table border="0" width="100%" cellpadding="15" cellspacing="0" align="center" bgcolor="#f5f5dc" style="box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6)">
+                            <tr>
+                                <td>
+                                    <font face="arial" size="5" color="#444444">
+                                    Proyectos Adicionales
+                                    </font>
+                                    <br/><br/>
+                                    <font face="arial" size="4" color="#0088F1">
+                                    Si desean ver mas proyectos que no he mencionado, los mencionadoes son mis mejores hasta el momento, visiten aqui:                               
+                                    </font>
+                                    <br/><br/>
+                                    <a href="subsites/extra-projects/projects.html">
+                                        <font face="arial" size="4" color="#aa46aa">	
+                                        Proyectos Adicionales
+                                        </font>
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>  
+                    </td>
+                    <!-- Proyecto 2 -->
+                    <!-- Repite la estructura para cada proyecto, ajustando los títulos, descripciones e imágenes según corresponda -->
+                </tr>
+                <!-- Puedes agregar más filas de proyectos si es necesario, siguiendo la misma estructura -->
+            </table>
+          </td>
+        </tr>
+     </table>
+    <!-- Fin de la sección Portfolio -->
+	    <!-- Inicio de la sección Contacto -->
+    <!-- Esta sección provee un formulario a través del cual los visitantes pueden enviar un mensaje directamente desde la página. Es esencial para cualquier sitio web que busca fomentar la comunicación con su audiencia o clientes. -->
+    <table border="0" id="contact" width="100%" cellpadding="0" cellspacing="0" bgcolor="#545454">
+      <tr>
+         <td>
+            <table border="0" width="85%" cellpadding="15" cellspacing="0" align="center">
+                <!-- Encabezado de la sección Contacto -->
+                <tr>
+                    <td height="160" align="center" valign="middle">
+                        <font face="arial" size="6" color=" #0088F1">
+                        Contáctame
+                        </font>
+                        <hr width="200" color="#0088F1"> <!-- Línea decorativa -->
+                    </td>
+                </tr>
+                <!-- Formulario de contacto -->
+                <tr>
+                    <td align="center" valign="top">
+                        <table border="0" width="55%" cellpadding="20" cellspacing="0" align="center" bgcolor="#1b2a41" style="box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6)">
+                            <tr>
+                                <td>
+                                    <!-- Cada fila contiene un campo diferente del formulario -->
+                                    <table border="0" width="100%" cellpadding="15" cellspacing="0" align="center" bgcolor="#779ae0">
+                                        <!-- Campo para el nombre completo -->
+                                        <tr>
+                                            <td width="30%">
+                                                <font face="arial" size="4" color="#ffffff">
+                                                Nombre y Apellidos
+                                                </font>
+                                            </td>
+                                            <td width="70%">
+                                                <input type="text" size="50">
+                                            </td>
+                                        </tr>
+                                        <!-- Campo para el email -->
+                                        <tr>
+                                            <td width="30%">
+                                                <font face="arial" size="4" color="#ffffff">
+                                                Correo Electronico
+                                                </font>
+                                            </td>
+                                            <td width="70%">
+                                                <input type="text" size="50">
+                                            </td>
+                                        </tr>
+                                        <!-- Campo para el título o asunto del mensaje -->
+                                        <tr>
+                                            <td width="30%">
+                                                <font face="arial" size="4" color="#ffffff">
+                                                Título
+                                                </font>
+                                            </td>
+                                            <td width="70%">
+                                                <input type="text" size="50">
+                                            </td>
+                                        </tr>
+                                        <!-- Campo para el mensaje -->
+                                        <tr>
+                                            <td width="30%">
+                                                <font face="arial" size="4" color="#ffffff">
+                                                Mensaje
+                                                </font>
+                                            </td>
+                                            <td width="70%">
+                                                <textarea cols="51" rows="4"></textarea>
+                                            </td>
+                                        </tr>
+                                        <!-- Botón de envío -->
+                                        <tr>
+                                            <td width="30%">
+                                                &nbsp; <!-- Espacio en blanco para alinear el botón con el campo anterior -->
+                                            </td>
+                                            <td width="70%">
+                                                <button type="submit" style="background-color: #00e100; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6)">
+                                                    <font size="5" face="arial" color="ffffff">Enviar Mensaje</font>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+          </td>
+        </tr>
+     </table>
+    <!-- Fin de la sección Contacto -->
+    <!-- Inicio del Pie de página (Footer) -->
+    <!-- Esta sección proporciona información de contacto adicional y enlaces a redes sociales, permitiendo a los visitantes conectar con el propietario del sitio en diversas plataformas. -->
+    <table border="0" width="100%" cellpadding="0" cellspacing="0" bgcolor="#1b2a41">
+      <tr>
+         <td>
+            <table border="0" width="85%" cellpadding="15" cellspacing="0" align="center">
+                <!-- Información de contacto dividida en tres columnas: teléfono, email y ubicación -->
+                <tr>
+                    <!-- Columna para el teléfono -->
+                    <td width="33.33%" valign="top">
+                        <table border="0" width="100%" cellpadding="15" cellspacing="0" align="center">
+                            <tr>
+                                <td align="center" valign="top">
+                                    <font color="#00aa00" size="6">
+                                        <span class="fa fa-phone"></span>
+                                    </font>
+                                    <br/><br/>
+                                    <font color="#ffffff" size="5" face="arial">
+                                        Número de Teléfono
+                                    </font>
+                                    <p>
+                                        <font color="#c2c0c3" size="3" face="arial">
+                                        +1 (787) 123-4567
+                                        </font>
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <!-- Columna para el email -->
+                    <td width="33.33%" valign="top">
+                        <table border="0" width="100%" cellpadding="15" cellspacing="0" align="center">
+                            <tr>
+                                <td align="center" valign="top">
+                                    <font color="#ffffff" size="6">
+                                        <span class="fa fa-envelope"></span>
+                                    </font>
+                                    <br/><br/>
+                                    <font color="#ffffff" size="5" face="arial">
+                                        Email
+                                    </font>
+                                    <p>
+                                        <font color="#c2c0c3" size="3" face="arial">
+                                        mi_gmail@gmail.com
+                                        </font>
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <!-- Columna para la ubicación -->
+                    <td width="33.33%" valign="top">
+                        <table border="0" width="100%" cellpadding="15" cellspacing="0" align="center">
+                            <tr>
+                                <td align="center" valign="top">
+                                    <font color="#ff3000" size="6">
+                                        <span class="fa fa-map-marker"></span>
+                                    </font>
+                                    <br/><br/>
+                                    <font color="#ffffff" size="5" face="arial">
+                                        Ubicación
+                                    </font>
+                                    <p>
+                                        <font color="#c2c0c3" size="3" face="arial">
+                                        Una casa, en una urbanizacion en Barceloneta, Puerto Rico, 00617.
+                                        </font>
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!-- Separador horizontal -->
+                <tr>
+                    <td colspan="3">
+                        <hr noshade>
+                    </td>
+                </tr>
+                <!-- Enlaces a redes sociales -->
+                <tr>
+                    <td colspan="3" height="100" valign="top">
+                        <table border="0" width="30%" cellpadding="0" cellspacing="0" align="center">
+                            <!-- Fila única para todos los iconos de redes sociales -->
+                            <tr>
+                                <!-- Enlace a Facebook -->
+                                <td width="25%" align="center">
+                                    <table border="0" width="50" cellpadding="0" cellspacing="0" align="center" height="50" bgcolor="#000000" style="box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6)">
+                                        <tr>
+                                            <td align="center" valign="middle">
+                                                <a href="https://x.com">
+                                                    <font size="5" color="#ffffff">
+                                                        <span class="fa fa-twitter"></span>
+                                                    </font>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <!-- Enlace a Skype -->
+                                <td width="25%" align="center">   
+                                    <table border="0" width="50" cellpadding="0" cellspacing="0" align="center" height="50" bgcolor="#5765EB" style="box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6)">
+                                        <tr>
+                                            <td align="center" valign="middle">
+                                                <a href="https://discord.com">
+                                                    <font size="5" color="#ffffff">
+                                                        <image src="images/discord.webp" width="85%" height="85%"></image>
+                                                    </font>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <!-- Enlace a Google -->
+                                <td width="25%" align="center"> 
+                                   <table border="0" width="50" cellpadding="0" cellspacing="0" align="center" height="50" bgcolor="00ff00" style="box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6)">
+                                    <tr>
+                                            <td align="center" valign="middle">
+                                                <a href="https://whatsapp.com">
+                                                    <font size="5" color="#ffffff">
+                                                        <span class="fa fa-whatsapp"></span>
+                                                    </font>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <!-- Agregar más iconos de redes sociales según sea necesario -->
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+         </td>
+      </tr>
+    </table>
+    <!-- Fin del Pie de página (Footer) -->
+
+</body>
+</html>
