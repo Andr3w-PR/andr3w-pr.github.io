@@ -544,92 +544,89 @@
     <!-- Fin de la sección Portfolio -->
 	    <!-- Inicio de la sección Contacto -->
     <!-- Esta sección provee un formulario a través del cual los visitantes pueden enviar un mensaje directamente desde la página. Es esencial para cualquier sitio web que busca fomentar la comunicación con su audiencia o clientes. -->
-    <table border="0" id="contact" width="100%" cellpadding="0" cellspacing="0" bgcolor="#545454">
-      <tr>
-         <td>
-            <table border="0" width="85%" cellpadding="15" cellspacing="0" align="center">
-                <!-- Encabezado de la sección Contacto -->
-                <tr>
-                    <td height="160" align="center" valign="middle">
-                        <font face="arial" size="6" color=" #0088F1">
-                        Contact Me
-                        </font>
-                        <hr width="200" color="#0088F1"> <!-- Línea decorativa -->
-                    </td>
-                </tr>
-                <!-- Formulario de contacto -->
-                <tr>
-                    <td align="center" valign="top">
-                        <table border="0" width="55%" cellpadding="20" cellspacing="0" align="center" bgcolor="#1b2a41" style="box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6)">
-                            <tr>
-                                <td>
-                                    <!-- Cada fila contiene un campo diferente del formulario -->
-                                    <table border="0" width="100%" cellpadding="15" cellspacing="0" align="center" bgcolor="#779ae0">
-                                        <!-- Campo para el nombre completo -->
-                                        <tr>
-                                            <td width="30%">
-                                                <font face="arial" size="4" color="#ffffff">
-                                                Name & Surname
-                                                </font>
-                                            </td>
-                                            <td width="70%">
-                                                <input type="text" size="50">
-                                            </td>
-                                        </tr>
-                                        <!-- Campo para el email -->
-                                        <tr>
-                                            <td width="30%">
-                                                <font face="arial" size="4" color="#ffffff">
-                                                eMail
-                                                </font>
-                                            </td>
-                                            <td width="70%">
-                                                <input type="text" size="50">
-                                            </td>
-                                        </tr>
-                                        <!-- Campo para el título o asunto del mensaje -->
-                                        <tr>
-                                            <td width="30%">
-                                                <font face="arial" size="4" color="#ffffff">
-                                                Title
-                                                </font>
-                                            </td>
-                                            <td width="70%">
-                                                <input type="text" size="50">
-                                            </td>
-                                        </tr>
-                                        <!-- Campo para el mensaje -->
-                                        <tr>
-                                            <td width="30%">
-                                                <font face="arial" size="4" color="#ffffff">
-                                                Message
-                                                </font>
-                                            </td>
-                                            <td width="70%">
-                                                <textarea cols="51" rows="4"></textarea>
-                                            </td>
-                                        </tr>
-                                        <!-- Botón de envío -->
-                                        <tr>
-                                            <td width="30%">
-                                                &nbsp; <!-- Espacio en blanco para alinear el botón con el campo anterior -->
-                                            </td>
-                                            <td width="70%">
-                                                <button type="submit" style="background-color: #00e100; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6)">
-                                                    <font size="5" face="arial" color="ffffff">Send message</font>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-            </table>
+<table border="0" id="contact" width="100%" cellpadding="0" cellspacing="0" bgcolor="#545454">
+  <tr>
+    <td>
+      <table border="0" width="85%" cellpadding="15" cellspacing="0" align="center">
+        <!-- Encabezado de la sección Contacto -->
+        <tr>
+          <td height="160" align="center" valign="middle">
+            <font face="arial" size="6" color="#0088F1">Contact Me</font>
+            <hr width="200" color="#0088F1">
           </td>
         </tr>
-     </table>
+        <!-- Formulario de contacto -->
+        <tr>
+          <td align="center" valign="top">
+            <form action="https://formsubmit.co/edward-guzman-pr@outlook.com" method="POST">
+              <!-- ⚠️ Reemplaza TU_CORREO_AQUI por tu correo real -->
+              <table border="0" width="55%" cellpadding="20" cellspacing="0" align="center" bgcolor="#1b2a41"
+                style="box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6)">
+                <tr>
+                  <td>
+                    <table border="0" width="100%" cellpadding="15" cellspacing="0" align="center" bgcolor="#779ae0">
+                      <!-- Campo nombre -->
+                      <tr>
+                        <td width="30%">
+                          <font face="arial" size="4" color="#ffffff">Name & Surname</font>
+                        </td>
+                        <td width="70%">
+                          <input type="text" name="nombre" size="50" required>
+                        </td>
+                      </tr>
+                      <!-- Campo correo -->
+                      <tr>
+                        <td width="30%">
+                          <font face="arial" size="4" color="#ffffff">eMail</font>
+                        </td>
+                        <td width="70%">
+                          <input type="email" name="email" size="50" required>
+                        </td>
+                      </tr>
+                      <!-- Campo título -->
+                      <tr>
+                        <td width="30%">
+                          <font face="arial" size="4" color="#ffffff">Title</font>
+                        </td>
+                        <td width="70%">
+                          <input type="text" name="titulo" size="50">
+                        </td>
+                      </tr>
+                      <!-- Campo mensaje -->
+                      <tr>
+                        <td width="30%">
+                          <font face="arial" size="4" color="#ffffff">Message</font>
+                        </td>
+                        <td width="70%">
+                          <textarea name="mensaje" cols="51" rows="4" required></textarea>
+                        </td>
+                      </tr>
+                      <!-- Botón enviar -->
+                      <tr>
+                        <td width="30%">&nbsp;</td>
+                        <td width="70%">
+                          <button type="submit"
+                            style="background-color: #00e100; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6)">
+                            <font size="5" face="arial" color="#ffffff">Send Message</font>
+                          </button>
+                        </td>
+                      </tr>
+
+                      <!-- Configuración oculta -->
+                      <input type="hidden" name="_next" value="https://tu-sitio.com/gracias.html">
+                      <input type="hidden" name="_captcha" value="false">
+
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </form>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
     <!-- Fin de la sección Contacto -->
     <!-- Inicio del Pie de página (Footer) -->
     <!-- Esta sección proporciona información de contacto adicional y enlaces a redes sociales, permitiendo a los visitantes conectar con el propietario del sitio en diversas plataformas. -->
